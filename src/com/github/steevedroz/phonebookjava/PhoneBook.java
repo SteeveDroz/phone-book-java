@@ -1,9 +1,9 @@
 package com.github.steevedroz.phonebookjava;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A component that allows any object to notify or call any other object with an
@@ -62,19 +62,19 @@ public enum PhoneBook {
     /**
      * The list of registered subscribers for each of the keywords.
      */
-    private Dictionary<String, List<PhoneBookSubscriber>> subscribers;
+    private Map<String, List<PhoneBookSubscriber>> subscribers;
     /**
      * The list of registered objects that can be called anywhere in the
      * application
      */
-    private Dictionary<String, Object> entries;
+    private Map<String, Object> entries;
 
     /**
      * Private constructor of the singleton. Only called once.
      */
     private PhoneBook() {
-	subscribers = new Hashtable<String, List<PhoneBookSubscriber>>();
-	entries = new Hashtable<String, Object>();
+	subscribers = new HashMap<String, List<PhoneBookSubscriber>>();
+	entries = new HashMap<String, Object>();
     }
 
     /**
